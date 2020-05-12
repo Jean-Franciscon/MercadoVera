@@ -14,7 +14,6 @@ namespace Mercado_Vera.View.GerVenda.Relatorios
     public partial class FmrVendaDetalhada : Form
     {
         string id;
-        //string nome;
 
         public void GetId(string id)
         {
@@ -23,7 +22,6 @@ namespace Mercado_Vera.View.GerVenda.Relatorios
 
         public void GetNome(string nome)
         {
-           // this.nome = nome;
             lblNome.Text = nome;
         }
 
