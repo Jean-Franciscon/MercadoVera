@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F4E12EF-F416-4437-B344-3BD2CEDB017B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Mercado_Vera</RootNamespace>
+    <AssemblyName>Mercado_Vera</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\DaoCliente.cs" />
+    <Compile Include="Dao\DaoDividaDetalhada.cs" />
+    <Compile Include="Dao\DaoFechamento.cs" />
+    <Compile Include="Dao\DaoFornecedor.cs" />
+    <Compile Include="Dao\DaoFoto.cs" />
+    <Compile Include="Dao\DaoImprimir.cs" />
+    <Compile Include="Dao\DaoProduto.cs" />
+    <Compile Include="Dao\DaoVenda.cs" />
+    <Compile Include="Dao\LoginDaoComandos.cs" />
+    <Compile Include="DataS\Mercado.cs">
+      <DependentUpon>Mercado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataS\Mercado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mercado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Cliente.cs" />
+    <Compile Include="Entity\DividaDetalhada.cs" />
+    <Compile Include="Entity\Endereco.cs" />
+    <Compile Include="Entity\Fechamento.cs" />
+    <Compile Include="Entity\ItemVenda.cs" />
+    <Compile Include="Entity\Fornecedor.cs" />
+    <Compile Include="Entity\LoginEnty.cs" />
+    <Compile Include="Entity\Produto.cs" />
+    <Compile Include="Entity\Telefone.cs" />
+    <Compile Include="Entity\Venda.cs" />
+    <Compile Include="Exceptions\DomainExceptions.cs" />
+    <Compile Include="BemaFI32.cs" />
+    <Compile Include="FmrBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmrBackup.Designer.cs">
+      <DependentUpon>FmrBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FmrCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmrCaixa.Designer.cs">
+      <DependentUpon>FmrCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FmrPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmrPrincipal.Designer.cs">
+      <DependentUpon>FmrPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="View\GerCliente\BuscaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerCliente\BuscaCliente.Designer.cs">
+      <DependentUpon>BuscaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerCliente\EditarCli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerCliente\EditarCli.Designer.cs">
+      <DependentUpon>EditarCli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerCliente\FmrCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerCliente\FmrCliente.Designer.cs">
+      <DependentUpon>FmrCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerCliente\FmrCliPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerCliente\FmrCliPagamento.Designer.cs">
+      <DependentUpon>FmrCliPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerCliente\PesqCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerCliente\PesqCliente.Designer.cs">
+      <DependentUpon>PesqCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerFornecedor\FmrFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerFornecedor\FmrFornecedor.Designer.cs">
+      <DependentUpon>FmrFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerFornecedor\FmrFornecedorEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerFornecedor\FmrFornecedorEdit.Designer.cs">
+      <DependentUpon>FmrFornecedorEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerFornecedor\FmrPesquisaFor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerFornecedor\FmrPesquisaFor.Designer.cs">
+      <DependentUpon>FmrPesquisaFor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerProduto\FmrEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerProduto\FmrEditar.Designer.cs">
+      <DependentUpon>FmrEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerProduto\FmrPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerProduto\FmrPesquisa.Designer.cs">
+      <DependentUpon>FmrPesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerProduto\FmrProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerProduto\FmrProduto.Designer.cs">
+      <DependentUpon>FmrProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\GerVenda\Financeiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerVenda\Financeiro.Designer.cs">
+      <DependentUpon>Financeiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerVenda\FmrAbertura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerVenda\FmrAbertura.Designer.cs">
+      <DependentUpon>FmrAbertura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerVenda\FmrOutros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerVenda\FmrOutros.Designer.cs">
+      <DependentUpon>FmrOutros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerVenda\FmrPesqProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerVenda\FmrPesqProd.Designer.cs">
+      <DependentUpon>FmrPesqProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerVenda\Relatorios\FmrVendaDetalhada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerVenda\Relatorios\FmrVendaDetalhada.Designer.cs">
+      <DependentUpon>FmrVendaDetalhada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerVenda\Relatorios\Rela_Cli_Devedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerVenda\Relatorios\Rela_Cli_Devedores.Designer.cs">
+      <DependentUpon>Rela_Cli_Devedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerVenda\Relatorios\Rela_For.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerVenda\Relatorios\Rela_For.Designer.cs">
+      <DependentUpon>Rela_For.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerVenda\Relatorios\Rel_Estoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerVenda\Relatorios\Rel_Estoque.Designer.cs">
+      <DependentUpon>Rel_Estoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GerVenda\Rel_Fechamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerVenda\Rel_Fechamento.Designer.cs">
+      <DependentUpon>Rel_Fechamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\FmrLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login\FmrLogin.Designer.cs">
+      <DependentUpon>FmrLogin.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FmrBackup.resx">
+      <DependentUpon>FmrBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmrCaixa.resx">
+      <DependentUpon>FmrCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmrPrincipal.resx">
+      <DependentUpon>FmrPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerCliente\BuscaCliente.resx">
+      <DependentUpon>BuscaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerCliente\EditarCli.resx">
+      <DependentUpon>EditarCli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerCliente\FmrCliente.resx">
+      <DependentUpon>FmrCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerCliente\FmrCliPagamento.resx">
+      <DependentUpon>FmrCliPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerCliente\PesqCliente.resx">
+      <DependentUpon>PesqCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerFornecedor\FmrFornecedor.resx">
+      <DependentUpon>FmrFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerFornecedor\FmrFornecedorEdit.resx">
+      <DependentUpon>FmrFornecedorEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerFornecedor\FmrPesquisaFor.resx">
+      <DependentUpon>FmrPesquisaFor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerProduto\FmrEditar.resx">
+      <DependentUpon>FmrEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerProduto\FmrPesquisa.resx">
+      <DependentUpon>FmrPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerProduto\FmrProduto.resx">
+      <DependentUpon>FmrProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\GerVenda\Financeiro.resx">
+      <DependentUpon>Financeiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerVenda\FmrAbertura.resx">
+      <DependentUpon>FmrAbertura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerVenda\FmrOutros.resx">
+      <DependentUpon>FmrOutros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerVenda\FmrPesqProd.resx">
+      <DependentUpon>FmrPesqProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerVenda\Relatorios\FmrVendaDetalhada.resx">
+      <DependentUpon>FmrVendaDetalhada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerVenda\Relatorios\Rela_Cli_Devedores.rdlc" />
+    <EmbeddedResource Include="View\GerVenda\Relatorios\Rela_Cli_Devedores.resx">
+      <DependentUpon>Rela_Cli_Devedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerVenda\Relatorios\Rela_For.resx">
+      <DependentUpon>Rela_For.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerVenda\Relatorios\Rela_Fornecedor.rdlc" />
+    <EmbeddedResource Include="View\GerVenda\Relatorios\Rela_Prod_Estoque.rdlc" />
+    <EmbeddedResource Include="View\GerVenda\Relatorios\Rel_Estoque.resx">
+      <DependentUpon>Rel_Estoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GerVenda\Rela_Fechamento.rdlc" />
+    <EmbeddedResource Include="View\GerVenda\Rel_Fechamento.resx">
+      <DependentUpon>Rel_Fechamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login\FmrLogin.resx">
+      <DependentUpon>FmrLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataS\Mercado.xsc">
+      <DependentUpon>Mercado.xsd</DependentUpon>
+    </None>
+    <None Include="DataS\Mercado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Mercado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataS\Mercado.xss">
+      <DependentUpon>Mercado.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dllDao\dllDao.csproj">
+      <Project>{974ABFEB-BEBC-49C2-85C6-D35CBE8BA1AE}</Project>
+      <Name>dllDao</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash-in-hand.png" />
+    <None Include="Resources\cash.png" />
+    <None Include="Resources\documents.png" />
+    <None Include="Resources\package_add1.png" />
+    <None Include="Resources\package_delete.png" />
+    <None Include="Resources\image_add.png" />
+    <None Include="Resources\arrow_refresh.png" />
+    <None Include="Resources\folder_edit.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\disk.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\accept.png" />
+    <None Include="Resources\user1.png" />
+    <None Include="Resources\door_out.png" />
+    <None Include="Resources\package1.png" />
+    <None Include="Resources\user_red.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\page_white_stack.png" />
+    <None Include="Resources\zoom1.png" />
+    <None Include="Resources\lorry_add.png" />
+    <None Include="Resources\user_suit1.png" />
+    <None Include="Resources\package.png" />
+    <None Include="Resources\zoom.png" />
+    <None Include="Resources\package_add.png" />
+    <None Include="Resources\wallet.png" />
+    <None Include="Resources\conference-call.png" />
+    <None Include="Resources\add-shopping-cart.png" />
+    <None Include="Resources\checked %281%29.png" />
+    <None Include="Resources\lock-2.png" />
+    <None Include="Resources\accept1.png" />
+    <None Include="Resources\add1.png" />
+    <None Include="Resources\add-shopping-cart1.png" />
+    <None Include="Resources\add-shopping-cart.ico" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\add-shopping-cart %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11_104884.png" />
+    <None Include="Resources\lupa2.png" />
+    <None Include="Resources\lupa3.png" />
+    <None Include="Resources\lupa4.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
